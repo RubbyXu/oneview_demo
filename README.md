@@ -33,8 +33,8 @@ There are mainly three layers in the application.
   - index.js
 
 - __test__/
-  - Home.test.ts    // Unit test for the application
-  - data.ts        // Test data
+  - Home.test.ts     
+  - data.ts        
 
 Other files:
 Other files under root directory are docs and necessary config files, which are used to support running the application. 
@@ -51,6 +51,11 @@ https://jsonplaceholder.typicode.com/posts?userId=1
 ## Env setup and start running
 - Node version: v18, create-react-app version: 5.0.1
 - Run `npm install` to install dependencies.
+- Create environment file `.env.development` with below config:
+```
+REACT_APP_USER_ENDPOINT='https://jsonplaceholder.typicode.com'
+NODE_ENV='development'
+```
 - Run `npm run start` to start webpack dev server.
 - Open http://localhost:3000 in local browser.
 
