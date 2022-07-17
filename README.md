@@ -49,10 +49,10 @@ https://jsonplaceholder.typicode.com/posts?userId=1
  
 
 ## Env setup and start running
-- Node version: v18 (in development and test environment, node version is v18.4.0)
+- Node version: v18, create-react-app version: 5.0.1
 - Run `npm install` to install dependencies.
-- Run `npm run start` to scan items.
-- Open http://localhost:3000 in local browser
+- Run `npm run start` to start webpack dev server.
+- Open http://localhost:3000 in local browser.
 
 ## Test 
 - Run `npm run test` for unit testing.
