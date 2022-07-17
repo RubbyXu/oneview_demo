@@ -1,70 +1,58 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project: oneview
+A React single page application, display a table using given api endpoint to show how react and redux(with middleware thunk) manage state and props.
 
-## Available Scripts
+Refer to requirements from here:
+https://github.com/OneviewCommerce/typescript-react-redux-test
 
-In the project directory, you can run:
+# Design
+## Components 
+There are mainly three layers in the application.
+- API layer
 
-### `npm start`
+- Redux store Layer
+- View layer
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Files Structure
+```
+- src/
+  - api            
+    - apis.js 
+    - httpClient.js
+  - components
+    - AutoComplete.js
+    - Home.js
+    - PostList.js
+    - Table.js
+    - UserList.js
+    - TextBox.js
+  - store
+    - index.js
+    - posts.js
+    - users.js
+  - index.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- __test__/
+  - App.test.ts    // Unit test for the application
+  - data.ts        // Test data
 
-### `npm test`
+Other files:
+Other files under root directory are docs and necessary config files, which are used to support running the application. 
+```
+## Pre-defined Input
+The two endpoints should be accessable form HTTP server part. 
+https://jsonplaceholder.typicode.com/users  
+https://jsonplaceholder.typicode.com/posts?userId=1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Working flow
+ 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Env setup and start running
+- Node version: v18 (in development and test environment, node version is v18.4.0)
+- Run `npm install` to install dependencies.
+- Run `npm run start` to scan items.
+- Open http://localhost:3000 in local browser
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Test 
+- Run `npm run test` for unit testing.
