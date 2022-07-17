@@ -33,7 +33,7 @@ There are mainly three layers in the application.
   - index.js
 
 - __test__/
-  - App.test.ts    // Unit test for the application
+  - Home.test.ts    // Unit test for the application
   - data.ts        // Test data
 
 Other files:

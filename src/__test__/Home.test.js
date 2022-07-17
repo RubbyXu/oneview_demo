@@ -12,8 +12,3 @@ const server = setupServer(
   }),
 )
 
-
-test('loads and display users', () => {
-   
-
-});
