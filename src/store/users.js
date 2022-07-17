@@ -39,7 +39,8 @@ export const loadUsers = () => {
                 dispatch({type: LOAD_USERS, payload: users})
                 resolve('')
             } catch (error) {
-                
+                // Need to add to logs
+                console.log(`Load user list error ${error}`)
             }
         })
     }

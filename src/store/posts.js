@@ -21,7 +21,7 @@ export const loadPost = (id) => {
         const posts = _.get(results, 'data', [])
         dispatch({type: LOAD_USER_POST, payload: posts})
        } catch (error) {
-        
+        console.log(`Load post list error ${error}`)
        }
     }
 }

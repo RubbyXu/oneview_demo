@@ -6,35 +6,43 @@ Refer to requirements from here:
 https://github.com/OneviewCommerce/typescript-react-redux-test
 
 # Design
+## Principle
+- Open/Close (Be able to add additional functions without changing existing code)
+- Try to make common components re-useable and generic.  
 ## Components 
 There are mainly three layers in the application.
-- API layer
-
+- API layer    
+Be responsible for loading users list and posts list for specific user
 - Redux store Layer
+Dispatch async or sync action, update redux store
 - View layer
+Data driven components.  Render related elements according to the update of state and props. 
 
 ## Files Structure
 ```
 - src/
-  - api            
-    - apis.js 
-    - httpClient.js
-  - components
-    - AutoComplete.js
-    - Home.js
-    - PostList.js
-    - Table.js
-    - UserList.js
-    - TextBox.js
-  - store
-    - index.js
-    - posts.js
-    - users.js
-  - index.js
+  - api                   // API 
+    - apis.js             // Fetch users list and posts list api
+    - httpClient.js       // Rest api library
+  - components            // Components
+    - Home.js             // Parent component, it will fetch users list and update redux store when mounted, it has two children components: UserList and PostList
+    - UserList.js         // Render users list and search box, it has two children components: Table and AutoComplete
+    - PostList.js         // Render post list when triggered, it has two children compoenents: Table and TextBox
+    - Table.js            // Generic table component library, whose input is data and conlumns 
+    - AutoComplete.js     // Generic search component
+    - TextBox.js          // Generic text display component 
+  - store                 // Redux store and reducers
+    - index.js            // Index of redux store, it combines all reducers and exports them to outside
+    - posts.js            // Posts reducers and async dispatch action
+    - users.js            // Users reducers and async dispatch actions
+  - public                // Static assets folder
+    - index.html          // index.html
+    - ...                 // Assets files, including images and other static files
+  - index.js              // Route path to different components
 
-- __test__/
-  - Home.test.ts     
-  - data.ts        
+- __test__/               // Test cases folder
+  - Home.test.ts          // Unit test for Home component
+  - data.ts               // Test data 
 
 Other files:
 Other files under root directory are docs and necessary config files, which are used to support running the application. 
@@ -44,9 +52,6 @@ The two endpoints should be accessable form HTTP server part.
 https://jsonplaceholder.typicode.com/users  
 https://jsonplaceholder.typicode.com/posts?userId=1
 
-
-## Working flow
- 
 
 ## Env setup and start running
 - Node version: v18, create-react-app version: 5.0.1

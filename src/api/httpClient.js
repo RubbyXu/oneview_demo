@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = process.env.REACT_APP_USER_ENDPOINT; 
+const baseURL = process.env.REACT_APP_USER_ENDPOINT || "https://jsonplaceholder.typicode.com"; 
 
 const httpClient = axios.create({
     baseURL,

@@ -18,7 +18,7 @@ const PostList = (props) => {
     const handleClick = () => {}
     return (
         <div>
-            <TextBox data={user}/>
+            <TextBox data={`${user} 's Posts:`}/>
             <TableTemplate data={posts} labels={labels} fields={fields} handleClick={handleClick}/>
         </div>
     )
